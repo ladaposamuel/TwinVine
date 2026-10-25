@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <style>
+      body {
+        margin: 0;
+        width: 380px;
+        background: #1e1e2e;
+        color: #cdd6f4;
+        font: 13px/1.4 sans-serif;
+      }
+      main { padding: 12px; }
+      h1 { margin: 0 0 8px; font-size: 14px; color: #f5c2e7; }
+      p { margin: 0 0 10px; color: #a6adc8; }
+      button {
+        width: 100%;
+        box-sizing: border-box;
+        margin-top: 8px;
+        background: #313244;
+        color: #cdd6f4;
+        border: 1px solid #f5c2e7;
+        border-radius: 4px;
+        padding: 6px;
+        cursor: pointer;
+      }
+      #manifests {
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+        max-height: 320px;
+        overflow: auto;
+      }
+      .item {
+        width: 100%;
+        margin: 0;
+        text-align: left;
+        border-color: #45475a;
+      }
+      .item.selected { border-color: #f5c2e7; background: #45475a; }
+      .item strong { display: block; color: #cdd6f4; }
+      .item span { display: block; color: #a6adc8; font-size: 12px; }
+      .badge {
+        display: inline-block;
+        margin-bottom: 2px;
+        color: #11111b;
+        background: #f5c2e7;
+        border-radius: 3px;
+        padding: 0 4px;
+        font-size: 11px;
+      }
+      #status { min-height: 2.6em; margin-top: 8px; }
+    </style>
+  </head>
+  <body>
+    <main>
+      <h1>HellYes Pair</h1>
+      <p id="status">Checking HellYes…</p>
+      <div id="manifests"></div>
+      <button id="send" type="button">Send to HellYes</button>
+    </main>
+    <script src="popup.js"></script>
+  </body>
+</html>

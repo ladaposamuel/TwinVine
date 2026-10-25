@@ -1,0 +1,28 @@
+{
+  "manifest_version": 3,
+  "name": "HellYes Pair",
+  "version": "1.1.0",
+  "description": "Send the manifest response from the page you are playing to HellYes on this computer.",
+  "permissions": ["webRequest", "cookies", "storage"],
+  "host_permissions": ["<all_urls>"],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_title": "Send to HellYes",
+    "default_popup": "popup.html"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["bridge.js"],
+      "run_at": "document_start"
+    },
+    {
+      "matches": ["<all_urls>"],
+      "js": ["inject.js"],
+      "run_at": "document_start",
+      "world": "MAIN"
+    }
+  ]
+}
